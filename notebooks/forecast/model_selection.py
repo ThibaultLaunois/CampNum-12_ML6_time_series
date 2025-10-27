@@ -39,7 +39,6 @@ def time_series_cv(model, error_func, train, val, horizons, step=1):
 
     #change here: max(horizons) + 1
     for i in range(0, len(val) - max(horizons) + 1, step):
-        
         train_cv = np.concatenate([train, val[:i]], axis=0)
         model.fit(train_cv)
         
